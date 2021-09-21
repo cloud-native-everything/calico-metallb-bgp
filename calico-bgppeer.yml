@@ -1,0 +1,20 @@
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: leaf1-tor
+spec:
+  peerIP: 6.5.3.1
+  asNumber: 65310
+  nodeSelector: leaf == 'leaf1'
+  sourceAddress: "None"
+
+---
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: leaf2-tor
+spec:
+  peerIP: 6.5.3.2
+  asNumber: 65320
+  nodeSelector: leaf == 'leaf2'
+  sourceAddress: "None"

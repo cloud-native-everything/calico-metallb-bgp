@@ -1,4 +1,4 @@
-#Calico and MetalLB working together with BGP
+# Calico and MetalLB working together with BGP
 
 When we want to make Calico and MetalLB working together with BGP, we'll run into the following issue: BGP only allows one session to be established per pair of nodes. So, if Calico has a session established with your BGP router, MetalLB cannot establish its own session – it’ll get rejected as a duplicate by BGP’s conflict resolution algorithm.
 

@@ -1,0 +1,73 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    peers:
+    - peer-address: 6.5.3.1
+      peer-asn: 65310
+      my-asn: 65201
+      router-id: 6.4.5.20
+      source-address: 6.4.5.20
+      node-selectors:
+      - match-expressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values: [wk-a1]
+    - peer-address: 6.5.3.2
+      peer-asn: 65320
+      my-asn: 65201
+      router-id: 6.4.5.21
+      source-address: 6.4.5.21
+      node-selectors:
+      - match-expressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values: [wk-a2]
+    - peer-address: 6.5.3.1
+      peer-asn: 65310
+      my-asn: 65201
+      router-id: 6.4.5.22
+      source-address: 6.4.5.22
+      node-selectors:
+      - match-expressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values: [wk-a3]
+    - peer-address: 6.5.3.2
+      peer-asn: 65320
+      my-asn: 65201
+      router-id: 6.4.5.30
+      source-address: 6.4.5.30
+      node-selectors:
+      - match-expressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values: [ctl-a1]
+    - peer-address: 6.5.3.1
+      peer-asn: 65310
+      my-asn: 65201
+      router-id: 6.4.5.31
+      source-address: 6.4.5.31
+      node-selectors:
+      - match-expressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values: [ctl-a2]
+    - peer-address: 6.5.3.2
+      peer-asn: 65320
+      my-asn: 65201
+      router-id: 6.4.5.32
+      source-address: 6.4.5.32
+      node-selectors:
+      - match-expressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values: [ctl-a3]
+    address-pools:
+    - name: default
+      protocol: bgp
+      addresses:
+      - 10.254.254.240/28

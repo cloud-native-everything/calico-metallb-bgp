@@ -6,4 +6,4 @@ In this case, I wanted to keep using the ToR (Top of Rack) routers for the LoadB
 
 My Setup is using Calico and MetalLB working together with BGP in Kubernetes v1.20.5. My Cluster was installed with kubeadm with control-planes/master redundancy on Fedora 34 (Kernel version 5.13.4-200). I am using cri-o as my container runtime.
 
-More details at my [blog post in cloud-native-eveything.com ](https://www.cloud-native-everything.com/calico-and-metal…ogether-with-bgp/)
+More details at my [blog post in cloud-native-eveything.com ](https://brewpackets.blog/2023/02/20/calico-and-metallb-working-together-with-bgp)
